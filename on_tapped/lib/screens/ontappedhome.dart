@@ -20,6 +20,14 @@ class OnTappedHome extends StatelessWidget {
       ),
       drawer: myDrawer(context),
       body: HomeBody(),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            //TODO: create query Form
+            //TODO: go to query Form
+          },
+        child: Icon(Icons.search),
+        backgroundColor: Theme.of(context).buttonTheme.colorScheme.background,
+      ),
     );
   }
 }
@@ -43,11 +51,13 @@ class _HomeBodyState extends State<HomeBody> {
           }
           else if (snapshot.hasData) {
             List<Brewery> myBreweries = snapshot.data.breweries;
-              return breweryListView(myBreweries);
+              return BreweryListView(myBreweries: myBreweries,);
           }
         }
         else{
-          return CircularProgressIndicator();
+          return Center(
+              child: CircularProgressIndicator(),
+          );
         }
       },
     );

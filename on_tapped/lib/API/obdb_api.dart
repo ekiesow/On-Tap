@@ -1,11 +1,11 @@
+import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import 'package:on_tapped/API/obdb_breweries.dart';
 
-
-String url = 'https://api.openbrewerydb.org/breweries';
+final String defaultUrl = 'https://api.openbrewerydb.org/breweries?by_city=Chico&by_state=CA&sort=+name';
 
 Brewery breweryFromJson(String brew) {
   final jsonData = json.decode(brew);
@@ -18,7 +18,7 @@ BreweryList breweriesFromJson(String brew) {
 }
 
 Future<Brewery> getBrewery() async {
-  final response = await http.get('$url/1');
+  final response = await http.get('$defaultUrl/1');
   if(response.statusCode == 200) {
     return breweryFromJson(response.body);
   }
@@ -26,7 +26,7 @@ Future<Brewery> getBrewery() async {
 }
 
 Future<BreweryList> getBreweries() async {
-  final response = await http.get(url);
+  final response = await http.get(defaultUrl);
   if(response.statusCode == 200) {
     return breweriesFromJson(response.body);
   }

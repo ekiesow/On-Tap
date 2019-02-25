@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:on_tapped/screens/ontappedhome.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(OnTappedApp());
 
-class MyApp extends StatelessWidget {
+class OnTappedApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Roboto',
       ),
       debugShowCheckedModeBanner: false,
-      home: OnTappedHome()
+      home: OnTappedHome(),
     );
   }
 }
