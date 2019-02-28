@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:on_tapped/screens/drawer.dart';
 import 'package:on_tapped/API/obdb_breweries.dart';
 import 'package:on_tapped/API/obdb_api.dart';
-import 'package:on_tapped/screens/brewerylistview.dart';
+import 'package:on_tapped/screens/list/brewerylistview.dart';
 
 class OnTappedHome extends StatelessWidget {
   @override
@@ -18,7 +18,7 @@ class OnTappedHome extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      drawer: myDrawer(context),
+//      drawer: myDrawer(context),
       body: HomeBody(),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
