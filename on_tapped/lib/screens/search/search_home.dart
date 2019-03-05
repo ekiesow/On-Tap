@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:on_tapped/screens/search/search_form.dart';
 
 class SearchHome extends StatelessWidget {
   @override
@@ -13,6 +14,7 @@ class SearchHome extends StatelessWidget {
         ),
         centerTitle: true,
       ),
+      body: QueryForm(),
     );
   }
 }

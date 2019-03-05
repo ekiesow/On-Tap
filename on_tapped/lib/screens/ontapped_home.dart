@@ -22,8 +22,6 @@ class OnTappedHome extends StatelessWidget {
       body: HomeBody(),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            //TODO: create query Form
-            //TODO: go to query Form
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => SearchHome()),
             );
