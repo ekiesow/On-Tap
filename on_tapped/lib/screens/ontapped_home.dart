@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:on_tapped/screens/drawer.dart';
 import 'package:on_tapped/API/obdb_breweries.dart';
 import 'package:on_tapped/API/obdb_api.dart';
-import 'package:on_tapped/screens/list/brewerylistview.dart';
+import 'package:on_tapped/screens/list/brewery_listview.dart' show BreweryListView;
+import 'package:on_tapped/screens/search/search_home.dart';
 
 class OnTappedHome extends StatelessWidget {
   @override
@@ -22,8 +22,9 @@ class OnTappedHome extends StatelessWidget {
       body: HomeBody(),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            //TODO: create query Form
-            //TODO: go to query Form
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => SearchHome()),
+            );
           },
         child: Icon(Icons.search),
         backgroundColor: Theme.of(context).buttonTheme.colorScheme.background,

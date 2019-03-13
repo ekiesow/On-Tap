@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:on_tapped/API/obdb_breweries.dart';
 
@@ -81,8 +82,34 @@ class _BuildBreweryCardState extends State<BuildBreweryCard> {
     return [
       breweryInfoText(currentBrewery, "${currentBrewery.street}"),
       breweryInfoText(currentBrewery,
-          "${currentBrewery.city}, ${currentBrewery.state}"),
+          "${currentBrewery.city}, ${currentBrewery.state}, ${currentBrewery.country}"),
+      phoneField(currentBrewery),
     ];
+  }
+
+  Widget phoneField(Brewery currentBrewery){
+    return Row(
+      children: <Widget>[
+        IconButton(icon: Icon(Icons.phone),
+          onPressed: () {
+            _launch_URL(currentBrewery);
+          },),
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: breweryInfoText(currentBrewery, "${currentBrewery.phone}"),
+        ),
+      ],
+    );
+  }
+  
+  _launch_URL(Brewery currentBrewery) async {
+    var phone = currentBrewery.phone;
+    if(await canLaunch('tel: $phone')){
+      await launch('tel: $phone');
+    }
+    else{
+      throw "Could not launch Phone";
+    }
   }
 
   Widget breweryInfoText(Brewery currentBrewery, String breweryText) {

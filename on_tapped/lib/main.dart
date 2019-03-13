@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:on_tapped/screens/ontappedhome.dart';
+import 'package:on_tapped/screens/ontapped_home.dart';
 
 void main() => runApp(OnTappedApp());
 
