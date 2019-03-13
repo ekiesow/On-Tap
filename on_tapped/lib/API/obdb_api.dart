@@ -5,7 +5,7 @@ import 'dart:convert';
 
 import 'package:on_tapped/API/obdb_breweries.dart';
 
-final String defaultUrl = 'https://api.openbrewerydb.org/breweries?by_city=Chico&by_state=CA&sort=+name';
+final String defaultUrl = 'https://api.openbrewerydb.org/breweries?by_city=Chico&by_state=California&sort=+name';
 
 Brewery breweryFromJson(String brew) {
   final jsonData = json.decode(brew);
